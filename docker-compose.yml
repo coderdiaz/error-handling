@@ -1,0 +1,16 @@
+version: "3.5"
+services:
+  postgres:
+    container_name: "${POSTGRES_CONTAINER}"
+    image: "${POSTGRES_IMAGE}"
+    environment:
+      POSTGRES_USER: "${POSTGRES_USER}"
+      POSTGRES_PASSWORD: "${POSTGRES_PASSWORD}"
+    ports:
+      - "${POSTGRES_PORT}:${POSTGRES_PORT}"
+    volumes:
+      - "./docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d"
+      - "${POSTGRES_DATA}:/var/lib/postgresql"
+networks:
+  default:
+    name: "${NETWORK}"

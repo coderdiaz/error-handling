@@ -1,0 +1,9 @@
+node_modules/
+postgres_data/
+dist/
+
+package-lock.json
+yarn-error.log
+
+.DS_Store
+.env

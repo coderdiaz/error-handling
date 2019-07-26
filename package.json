@@ -1,0 +1,48 @@
+{
+  "name": "nest-graphql-starter",
+  "version": "0.1.0-beta.0",
+  "private": false,
+  "author": {
+    "email": "hello@coderdiaz.me",
+    "name": "Javier Diaz",
+    "url": "https://coderdiaz.me"
+  },
+  "license": "MIT",
+  "scripts": {
+    "build": "rimraf dist && tsc -p tsconfig.build.json",
+    "start:prod": "node dist/main.js",
+    "prestart:prod": "npm run build",
+    "start:dev": "nodemon --config nodemon.json",
+    "lint": "tslint -p tsconfig.json -c tslint.json",
+    "test": "jest --config jest.config.js",
+    "test:cov": "jest --config jest.config.js --coverage",
+    "test:e2e": "jest --config tests/e2e/jest-e2e.json"
+  },
+  "dependencies": {
+    "@nestjs/common": "^6.5.3",
+    "@nestjs/core": "^6.5.3",
+    "@nestjs/graphql": "^6.4.2",
+    "@nestjs/platform-express": "^6.5.3",
+    "apollo-server-express": "^2.7.0",
+    "dotenv": "^8.0.0",
+    "graphql": "^14.4.2",
+    "graphql-tools": "^4.0.5",
+    "reflect-metadata": "^0.1.13",
+    "rimraf": "^2.6.3",
+    "rxjs": "^6.5.2"
+  },
+  "devDependencies": {
+    "@nestjs/testing": "^6.5.3",
+    "@types/jest": "^24.0.15",
+    "@types/node": "^12.6.8",
+    "@types/supertest": "^2.0.8",
+    "jest": "^24.8.0",
+    "nodemon": "^1.19.1",
+    "supertest": "^4.0.2",
+    "ts-jest": "^24.0.2",
+    "ts-node": "^8.3.0",
+    "tsconfig-paths": "^3.8.0",
+    "tslint": "^5.18.0",
+    "typescript": "^3.5.3"
+  }
+}
