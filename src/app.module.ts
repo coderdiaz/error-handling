@@ -1,6 +1,5 @@
 import { Module } from "@nestjs/common";
 import { GraphQLModule } from "@nestjs/graphql";
-import { MessageModule } from "./message/message.module";
 
 @Module({
   imports: [
@@ -9,7 +8,6 @@ import { MessageModule } from "./message/message.module";
       debug: true,
       playground: true,
     }),
-    MessageModule,
   ],
 })
 export class ApplicationModule {}
