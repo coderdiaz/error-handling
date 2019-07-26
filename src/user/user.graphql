@@ -1,0 +1,36 @@
+type Query {
+  user(email: String!): UserResult!
+  users: [User]!
+}
+
+type Mutation {
+  createUser(input: InputCreateUser!): CreateUserResult!
+}
+
+input InputCreateUser {
+  name: String!
+  lastName: String!
+  username: String
+  email: String!
+}
+
+union UserResult = User | NotFound
+union CreateUserResult = User | UserExists
+
+type NotFound {
+  message: String
+  code: String
+}
+
+type UserExists {
+  message: String
+  code: String
+}
+
+type User {
+  id: ID
+  name: String
+  lastName: String
+  username: String
+  email: String
+}
